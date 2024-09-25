@@ -5,13 +5,13 @@ if(isset($_POST['submit'])){
   date_default_timezone_set('Africa/Nairobi');
 
   # access token
-  $consumerKey = 'nk16Y74eSbTaGQgc9WF8j6FigApqOMWr'; //Fill with your app Consumer Key
-  $consumerSecret = '40fD1vRXCq90XFaU'; // Fill with your app Secret
+  $consumerKey = 'ClAE3ZDrAttvYYz5DbEA0o1TsSF18dNDdXEVQwEd74uMWYB2'; //Fill with your app Consumer Key
+  $consumerSecret = 'aARAzlUfULjSVoYMPG8fmGBQSqTNS0LFbCAC0PSWmhcrXGdupes4liTk8THGvkZc'; // Fill with your app Secret
 
   # define the variales
   # provide the following details, this part is found on your test credentials on the developer account
-  $BusinessShortCode = '174379';
-  $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';  
+  $BusinessShortCode = '522533';
+  $Passkey = 'nOi2yv5ET6uQZ5qnb9g5ANfIaEcoAczg2KmzVB+2bBlwkFt0PwG0rFb5jwyXziuPC+5rcPuf1rQXZvmYOR3fUrFUBAGLw2HVjQL/xJ+xsNEUzLzWSSfjYcuCBqvAwOVVRUVDX0uubrUkbDlEfZUDfVhYDM3/nLTKGUfUg0HYIRGuhR0J/tpRUGE5e7SEMiVWtCgXkMFYrW06ElTzerx+X8iSJ5cIEC9CHNYnNZzr+1lASqG/U2x/zty1ahCvlELasX0mgJBvnW4+ESIXt0VjG9GvIUwqcGEMCnwCGT23c60P/IsUdR269U0K1nU1Jr1UU57ePHTTuWw44kgmJQ3a1Q==';  
   
   /*
     This are your info, for
@@ -24,6 +24,11 @@ if(isset($_POST['submit'])){
   */
   
    $PartyA = $_POST['phone']; // This is your phone number, 
+   // Validate phone number format
+if (!preg_match('/^254[0-9]{9}$/', $PartyA)) {
+  echo "Invalid phone number format. Please use the format: 2547XXXXXXXX";
+  exit;
+}
   $AccountReference = '2255';
   $TransactionDesc = 'Test Payment';
   $Amount = $_POST['amount'];
